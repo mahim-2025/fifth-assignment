@@ -3,12 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency-Hotline</title>
+    <title>emergency-service</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <h1>
-        hello world
-    </h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet iusto error eligendi ut? Eligendi perferendis accusamus in quos velit veniam dicta quibusdam laudantium quam illo.</p>
+    <nav class="lg:px-10 lg:py-5 px-6 py-2 flex justify-between">
+        <div class="flex items-center ">
+            <img class="mr-2.5 h-10 lg:h-12" src="./assets/logo.png" alt="">
+            <h1 class="text-[1rem] font-bold text-[#006747]">Emergency <br> Service</h1>
+        </div>
+
+        <div class="flex">
+            <div class="flex items-center mr-2 lg:mr-6">
+                <p class="mr-1">0</p>
+                <img class="h-4" src="./assets/heart.png" alt="">
+            </div>
+            <div class="flex items-center mr-2 lg:mr-6">
+                <p class="mr-1">100</p>
+                <img class="h-4" src="./assets/coin.png" alt="">
+            </div>
+            <div>
+                <button class="bg-[#00a63e] rounded-2xl py-2 px-5 text-[#ffffff]">2 Copy</button>
+            </div>
+        </div>
+    </nav>
+    <div class="flex flex-col items-center bg-[#013223] py-4">
+        <img class="h-20 lg:h-28" src="./assets/logo-dark.png" alt="">
+        <h1 class="text-[#ffffff]">Emergency Servive Directory</h1>
+        <p class="text-center text-[#ffffff]">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+    </div>
 </body>
 </html>

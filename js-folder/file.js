@@ -6,8 +6,8 @@ const hearts = document.getElementsByClassName('heart')
 const heartCount = document.getElementById('heart-count')
 let count = 0
 
-for(const heartBtn of hearts){
-    heartBtn.addEventListener('click', function(){
+for (const heartBtn of hearts) {
+    heartBtn.addEventListener('click', function () {
         count++
         document.getElementById('heart-count').innerText = count
     })
@@ -22,34 +22,34 @@ let coinCount = 100
 const coinCountDisplay = document.getElementById('coin-count')
 
 
-function callBtnClicked (callBtnId, serviceId, numberId){
+function callBtnClicked(callBtnId, serviceId, numberId) {
     const callBtn = document.getElementById(callBtnId)
     const serviceBtn = document.getElementById(serviceId).innerText
     const numberBtn = document.getElementById(numberId).innerText
-      const callHistoryContainer = document.getElementById('call-history-container')
-    callBtn.addEventListener('click', function (){
-        if(coinCount < 20){
+    const callHistoryContainer = document.getElementById('call-history-container')
+    callBtn.addEventListener('click', function () {
+        if (coinCount < 20) {
             alert('you do not have enough coins to make the call')
             return
         }
-        
-            alert(`Calling ${serviceBtn} at ${numberBtn}`)
-        
+
+        alert(`Calling ${serviceBtn} at ${numberBtn}`)
+
         coinCount -= 20
         coinCountDisplay.innerText = coinCount
         const data = {
-            name : serviceBtn,
+            name: serviceBtn,
             number: numberBtn,
-            date : new Date().toLocaleString()
+            date: new Date().toLocaleString()
         }
         callHistoryData.push(data)
-        
-       
 
-       
-            const div = document.createElement('div')
-           
-            div.innerHTML = ` <div class="flex items-center gap-8 px-4 py-4">
+
+
+
+        const div = document.createElement('div')
+
+        div.innerHTML = ` <div class="flex items-center gap-8 px-4 py-4">
                 <div>
                     <h1 class="font-bold">${data.name}</h1>
                     <p>${data.number}</p>
@@ -60,12 +60,12 @@ function callBtnClicked (callBtnId, serviceId, numberId){
             </div>
             `
         callHistoryContainer.prepend(div)
-           
- });
+
+    });
 
 }
 
-    
+
 
 
 callBtnClicked('call-btn-1', 'service-name-1', 'number-1')
@@ -78,7 +78,7 @@ callBtnClicked('call-btn-6', 'service-name-6', 'number-6')
 
 // cleare button
 
-document.getElementById('clear-btn').addEventListener('click', function (){
+document.getElementById('clear-btn').addEventListener('click', function () {
     document.getElementById('call-history-container').innerHTML = ''
 })
 
@@ -92,8 +92,8 @@ const copyCountDisplay = document.getElementById('nav-copy-btn')
 
 const copyBtns = document.getElementsByClassName('copy-btn')
 
-for (const copyBtn of copyBtns){
-    copyBtn.addEventListener('click', function(){
+for (const copyBtn of copyBtns) {
+    copyBtn.addEventListener('click', function () {
         const numberElement = this.closest('.card').querySelector('.my-4 h1')
         const numberToCopy = numberElement.innerText
 

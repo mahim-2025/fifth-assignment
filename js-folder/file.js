@@ -11,17 +11,28 @@ for(const heartBtn of hearts){
 }
 
 
-// Reuseable functions
 
+// coin count function
+
+let coinCount = 100
+const coinCountDisplay = document.getElementById('coin-count')
 
 
 function callBtnClicked (callBtnId, serviceId, numberId){
     const callBtn = document.getElementById(callBtnId)
     const serviceBtn = document.getElementById(serviceId).innerText
     const numberBtn = document.getElementById(numberId).innerText
-    
     callBtn.addEventListener('click', function (){
-        alert(`Calling ${serviceBtn} at ${numberBtn}`)
+        if(coinCount < 20){
+            alert('you do not have enough coins to make the call')
+            return
+        }
+        else{
+            alert(`Calling ${serviceBtn} at ${numberBtn}`)
+        }
+        
+        coinCount -= 20
+        coinCountDisplay.innerText = coinCount
     })
 }
 
